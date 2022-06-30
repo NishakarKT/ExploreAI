@@ -24,6 +24,13 @@ class FacesUser(models.Model):
         try:
             img_encoding = face_recognition.face_encodings(rgb_img)[0]
             data = {"encodings": [img_encoding], "names": [self.name]}
+            try:
+                data = pickle.loads(open("data/faces/encodings.pickle", "rb").read())
+                print(data)
+                data["encodings"].append(img_encoding)
+                data["names"].append(self.name)
+            except: 
+                pass
             f = open("data/faces/encodings.pickle", "wb")
             f.write(pickle.dumps(data))
             f.close()
