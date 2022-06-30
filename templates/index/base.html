@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>{% block title %}{% endblock %}</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="{% static 'index/img/favicon.png' %}" rel="icon">
+    <link href="{% static 'index/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'index/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'index/vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'index/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'index/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'index/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'index/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'index/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="{% static 'index/css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <div class="logo">
+                <h1 class="text-light"><a href="{% url 'index' %}"><span>Explore.AI</span></a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html"><img src=/img/logo.png" alt="" class="img-fluid"></a>-->
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+
+    {% block main %}
+    {% endblock %}
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+
+        <div class="footer-newsletter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4>Our Newsletter</h4>
+                        <p>Subscribe to our Newsletter to never miss out on latest tools and technologies!</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <form onsubmit="event.preventDefault();window.location.reload();">
+                            <input style="border: none !important;outline: none !important;" type="email" name="email">
+                            <input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a target="_blank" href="{% url 'faces:index' %}">Faces.AI - Identify You</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a target="_blank" href="{% url 'objects:index' %}">Objects.AI - Identify It</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h4>Contact Us</h4>
+                        <p>
+                            IIT Kharagpur <br>
+                            West Bengal<br>
+                            India <br><br>
+                            <strong>Phone:</strong> +91 9999999999<br>
+                            <strong>Email:</strong> nishakarkumar0@outlook.com<br>
+                        </p>
+
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-info">
+                        <h3>About Explore.AI</h3>
+                        <p>Today, the amount of data that is generated, by both humans and machines, far outpaces humans' ability to absorb,
+                        interpret, and make complex decisions based on that data. Artificial intelligence forms the basis for all computer
+                        learning and is the future of all complex decision making.</p>
+                        <div class="social-links mt-3">
+                            <a href="https://www.facebook.com/nishakar.kumar.984/" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="https://www.instagram.com/im_nk736/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/nishakar-kumar-7016451ba/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+                class="bi bi-arrow-up-short"></i></a>
+
+        <!-- Vendor JS Files -->
+        <script src="{% static 'index/vendor/purecounter/purecounter.js' %}"></script>
+        <script src="{% static 'index/vendor/aos/aos.js' %}"></script>
+        <script src="{% static 'index/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'index/vendor/glightbox/js/glightbox.min.js' %}"></script>
+        <script src="{% static 'index/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+        <script src="{% static 'index/vendor/swiper/swiper-bundle.min.js' %}"></script>
+        <script src="{% static 'index/vendor/waypoints/noframework.waypoints.js' %}"></script>
+        <script src="{% static 'index/vendor/php-email-form/validate.js' %}"></script>
+
+        <!-- Template Main JS File -->
+        <script src="{% static 'index/js/main.js' %}"></script>
+</body>

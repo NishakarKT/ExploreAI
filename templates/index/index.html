@@ -1,0 +1,130 @@
+{% extends 'index/base.html' %}
+{% load static %}
+
+{% block title %}Home | Explore.AI{%endblock %}
+
+{% block main %}
+
+<style>
+  @media only screen and (max-width: 775px) {
+  .services {
+    flex-direction: column !important;
+  }
+}
+</style>
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex justify-cntent-center align-items-center">
+  <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+    <!-- Slide 1 -->
+    <div class="carousel-item active">
+      <div class="carousel-container">
+        <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Explore.AI</span></h2>
+        <p class="animate__animated animate__fadeInUp">Today, the amount of data that is generated, by both humans and machines, far outpaces humans' ability to absorb,
+        interpret, and make complex decisions based on that data. Artificial intelligence forms the basis for all computer
+        learning and is the future of all complex decision making.</p>
+        <span style="cursor: pointer;" onclick="window.scrollTo(0,window.innerHeight)"
+          class="btn-get-started animate__animated animate__fadeInUp">Explore</span>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-item">
+      <div class="carousel-container">
+        <h2 class="animate__animated animate__fadeInDown">Faces.AI - Identify You</h2>
+        <p class="animate__animated animate__fadeInUp">Explore.AI presents Faces.AI helps you identify the unknown faces you can't recall.
+          Based on OpenCV and Face Recognition Algorithms, Face.AI lets you experience realtime face detection and
+          identification! Register your face today.</p>
+        <span style="cursor: pointer;" onclick="window.open('{% url 'faces:register' %}')"
+          class="btn-get-started animate__animated animate__fadeInUp">Register</span>
+        <span style="cursor: pointer;" onclick="window.open('{% url 'faces:index' %}')"
+          class="btn-get-started animate__animated animate__fadeInUp">Identify</span>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-item">
+      <div class="carousel-container">
+        <h2 class="animate__animated animate__fadeInDown">Objects.AI - Identify It</h2>
+        <p class="animate__animated animate__fadeInUp">Explore.AI presents Objects.AI, an object detection tool based on computer vision techniques for locating and identifying objects in realtime! Objects.AI leverages machine learning or deep learning to produce meaningful results.</p>
+        <span style="cursor: pointer;" onclick="window.open('{% url 'objects:index' %}')"
+          class="btn-get-started animate__animated animate__fadeInUp">Explore</span>
+      </div>
+    </div>
+
+    <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
+    </a>
+
+    <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
+    </a>
+
+  </div>
+</section><!-- End Hero -->
+
+<main id="main">
+
+  <!-- ======= Services Section ======= -->
+  <section class="services">
+    <div class="container">
+      <div class="row services" style="display: flex;">
+        <div style="cursor: pointer; flex: 1" onclick="window.open('{% url 'faces:index' %}')" class="col-md-12 d-flex" data-aos="fade-up" data-aos-delay="200">
+          <div class="icon-box icon-box-blue">
+            <div class="icon"><i class="bx bx-face"></i></div>
+            <h4 class="title"><a href="">Faces.AI - Identify You</a></h4>
+            <p class="description">Explore.AI presents Faces.AI helps you identify the unknown faces you can't recall.
+            Based on OpenCV and Face Recognition Algorithms, Face.AI lets you experience realtime face detection and
+            identification! Register your face today.</p>
+          </div>
+        </div>
+        <div style="cursor: pointer; flex: 1" onclick="window.open('{% url 'objects:index' %}')" class="col-md-12 d-flex" data-aos="fade-up" data-aos-delay="100">
+          <div class="icon-box icon-box-cyan">
+            <div class="icon"><i class="bx bx-bot"></i></div>
+            <h4 class="title"><a href="">Objects.AI - Identify It</a></h4>
+            <p class="description">Explore.AI presents Objects.AI, an object detection tool based on computer vision techniques for locating and
+            identifying objects in realtime! Objects.AI leverages machine learning or deep learning to produce meaningful results.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Services Section -->
+
+  <!-- ======= Why Us Section ======= -->
+  <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-6 video-box">
+          <img style="width: 100%;height: 100%;object-fit: cover;" src="{% static 'index/img/opencvmusk.png' %}" class="img-fluid" alt="">
+          <a href="https://youtu.be/oXlwWbU8l2o" class="venobox play-btn mb-4" data-vbtype="video"
+            data-autoplay="true"></a>
+        </div>
+
+        <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
+
+          <div class="icon-box">
+            <div class="icon"><i class="bx bx-face"></i></div>
+            <h4 class="title"><a href="{% url 'faces:index' %}" target="_blank">Face Recognition (Computer Vision)</a></h4>
+            <p class="description">Face recognition systems use computer algorithms to pick out specific, distinctive details about a person's face. These
+            details, such as distance between the eyes or shape of the chin, are then converted into a mathematical representation
+            and compared to data on other faces collected in a face recognition database.</p>
+          </div>
+
+          <div class="icon-box">
+            <div class="icon"><i class="bx bx-basket"></i></div>
+            <h4 class="title"><a href="{% url 'objects:index' %}" target="_blank">Object Recognition (Computer Vision)</a></h4>
+            <p class="description">Object recognition is a computer vision technique for identifying objects in images or videos and is a
+            key output of deep learning and machine learning algorithms that can readily spot people, objects and visual details.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Why Us Section -->
+
+</main><!-- End #main -->
+
+{% endblock %}
